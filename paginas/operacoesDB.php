@@ -30,10 +30,23 @@
         return $lista_notas;
     }
 
+    function deletarNota($id){
+        global $conexao;
+        try{
+            $query_delete = $conexao->prepare("DELETE FROM NOTA WHERE ID = :id");
+            $query_delete->bindParam(":id",$id);
+            $query_delete->execute();
+            $_SESSION['retorno'] = ["tipo" => "sucesso" , "mensagem" => "Nota Deletada com sucesso!"];
+        }catch(PDOException $e){
+            $_SESSION['retorno'] = ["tipo" => "sucesso" , "mensagem" => "Erro ao inserir dados, contate ao suporte!"];
+        }
+    }
+
 
     if(isset($_POST['Cadastrar'])){
         inserirNota($_POST);
         header('Location: cadastrar_nota.php');
+    }else if(isset($_GET['deletar'])){
+        deletarNota($_GET['deletar']);
+        header('Location: listagem_notas.php');
     }
-
-    print_r(listarNotas());

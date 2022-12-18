@@ -41,12 +41,12 @@
     <ul class="lista-links">
         <li>
             <i class="fa-solid fa-plus"></i>
-            <a href="">Cadastrar Nota</a>
+            <a href="../paginas/cadastrar_nota.php">Cadastrar Nota</a>
         </li>
 
         <li>
             <i class="fa-solid fa-list"></i>
-            <a href="">Lista de Notas</a>
+            <a href="../paginas/listagem_notas.php">Lista de Notas</a>
         </li>
     </ul>
 </nav>
