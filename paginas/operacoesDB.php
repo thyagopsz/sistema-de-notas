@@ -4,6 +4,11 @@
     function inserirNota($dados){
         global $conexao;
         extract($dados);
+
+        if(empty($TITULO)){
+            $_SESSION['retorno'] = ["tipo" => "erro" , "mensagem" => "Toda nota precisa de um título"];
+            return;
+        }
         try{
             $query_insert = $conexao->prepare("INSERT INTO NOTA (TITULO , DESCRICAO) VALUES (:titulo , :descricao)");
             $query_insert->bindParam(":titulo",$TITULO);
@@ -59,6 +64,10 @@
     function atualizarNota($dados){
         global $conexao;
         extract($dados);
+        if(empty($TITULO)){
+            $_SESSION['retorno'] = ["tipo" => "erro" , "mensagem" => "Toda nota precisa de um título"];
+            return;
+        }
         try{
             $query_update = $conexao->prepare("UPDATE NOTA SET TITULO = :titulo , DESCRICAO = :descricao WHERE ID = :id");
             $query_update->bindParam(":titulo" , $TITULO);

@@ -51,7 +51,6 @@
 <body>
     <?php 
         require("menu.php");
-        echo basename($_SERVER['PHP_SELF']);
     ?>
 
     <div class="conteudo">
