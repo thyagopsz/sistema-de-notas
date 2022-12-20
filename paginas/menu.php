@@ -32,19 +32,19 @@
             color: white;
             text-decoration: none;
         }
-        .lista-links li:hover{
+        .selected{
             background-color: #231af3;
         }
     </style>
 <header>
 <nav>
     <ul class="lista-links">
-        <li>
+        <li class="<?php echo (basename($_SERVER['PHP_SELF']) == "cadastrar_nota.php" ? "selected" : "") ?>" >
             <i class="fa-solid fa-plus"></i>
             <a href="../paginas/cadastrar_nota.php">Cadastrar Nota</a>
         </li>
 
-        <li>
+        <li class="<?php echo (basename($_SERVER['PHP_SELF']) == "listagem_notas.php" ? "selected" : "") ?>">
             <i class="fa-solid fa-list"></i>
             <a href="../paginas/listagem_notas.php">Lista de Notas</a>
         </li>

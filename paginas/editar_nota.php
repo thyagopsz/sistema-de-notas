@@ -22,6 +22,7 @@
 
         form > input{
             padding: 10px;
+            font-size: 1.2rem;
         }
         form > input[type="submit"]{
             border: none;
@@ -31,6 +32,7 @@
         form > textarea{
             height: 200px;
             resize: none;
+            font-size: 1.2rem;
         }
         .sucesso{
             background-color: green;
@@ -47,18 +49,15 @@
 <body>
     <?php 
         require("menu.php");
+        require("operacoesDB.php");
+        if(isset($_GET['edicao'])){
+            $nota = obterNota($_GET['edicao']);
+        }else{
+            echo "NÃOS EXISTE";
+        }
     ?>
     <div class="conteudo">
         <h1>Editar Nota</h1>
-        <?php
-             require("operacoesDB.php");
-             if(isset($_GET['editar'])){
-                 $nota = obterNota($_GET['editar']);
-             }else{
-                 echo "NÃOS EXISTE";
-             }
-     
-        ?>
         <form method="POST" action="operacoesDB.php">
             <input type="hidden" name="IDEDICAO" value="<?php echo $nota['ID'];?>">
             <label for="">Titulo</label>

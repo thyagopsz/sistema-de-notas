@@ -83,7 +83,7 @@
     }else if(isset($_GET['deletar'])){
         deletarNota($_GET['deletar']);
         header('Location: listagem_notas.php');
-    }else if(isset($_GET['editar'])){
-        obterNota($_GET['editar']);
-        header('Location: editar_nota.php');
+    }else if(isset($_POST['Editar'])){
+        atualizarNota($_POST);
+        header("Location: editar_nota.php?edicao={$_POST['IDEDICAO']}");
     }

@@ -25,6 +25,7 @@
 
         form > input{
             padding: 10px;
+            font-size: 1.2rem;
         }
         form > input[type="submit"]{
             border: none;
@@ -48,7 +49,11 @@
     </style>
 </head>
 <body>
-    <?php require("menu.php") ?>
+    <?php 
+        require("menu.php");
+        echo basename($_SERVER['PHP_SELF']);
+    ?>
+
     <div class="conteudo">
         <h1>Cadastro de Notas</h1>
 
