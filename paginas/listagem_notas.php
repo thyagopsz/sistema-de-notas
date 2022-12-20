@@ -76,7 +76,7 @@
                             <h3>{$nota['TITULO']}</h3>
                             <p>{$nota['DESCRICAO']}</p>
                             <a class='acao deletar' href='operacoesDB.php?deletar={$nota['ID']}'>Deletar<i class='fa-solid fa-trash'></i></a>
-                            <a class='acao editar'  href='operacoesDB.php?editar={$nota['ID']}'>Editar<i class='fa-solid fa-pen-to-square'></i></a>
+                            <a class='acao editar'  href='editar_nota.php?editar={$nota['ID']}'>Editar<i class='fa-solid fa-pen-to-square'></i></a>
                         </li>";
                     }
                     echo $notaHTML;
